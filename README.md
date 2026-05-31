@@ -2,170 +2,82 @@
 
 ## 📌 Project Overview
 
-This project focuses on extracting and analyzing supplement product data from the Nutrabay website using Selenium and Python. The dataset was cleaned, transformed, and analyzed using Pandas to identify pricing trends, protein distribution, supplement categories, and business insights.
+This project is based on collecting and analyzing supplement product data from the Nutrabay website using Python and Selenium.
 
-The project demonstrates web scraping, data preprocessing, exploratory data analysis (EDA), and insight generation using real-world e-commerce supplement data.
+The main goal of this project was to understand product pricing, protein content, and supplement categories by performing data cleaning and analysis using Pandas.
 
----
-
-# 🚀 Objectives
-
-* Extract supplement product data from the Nutrabay website
-* Perform data cleaning and preprocessing using Python and Pandas
-* Analyze supplement pricing trends and protein distribution
-* Compare supplement categories using business metrics
-* Generate customer-focused business insights
-* Understand product segmentation in the nutrition industry
+The project also helped in understanding real-world web scraping and data analysis workflows.
 
 ---
 
-# 🛠 Tools & Technologies Used
+# 🛠 Tools Used
 
 * Python
 * Pandas
 * Selenium
-* CSV Data Handling
-* Jupyter Notebook
-* VS Code
+* Jupyter Notebook / VS Code
+* CSV File Handling
 
 ---
 
 # 🌐 Data Collection
 
-The dataset was collected from the Nutrabay website using Selenium automation.
+The data was collected from the Nutrabay website using Selenium automation.
 
-### Selenium was used for:
+The following details were extracted:
 
-* Automating browser interaction
-* Extracting product names
-* Capturing prices
-* Extracting supplement categories
-* Collecting protein gram values
-* Handling dynamic website content
+* Product Name
+* Price
+* Category
+* Supplement Type
+* Protein Grams
 
----
-
-# 📂 Dataset Columns
-
-| Column        | Description          |
-| ------------- | -------------------- |
-| Product       | Product name         |
-| Price         | Product price in INR |
-| Category      | Product category     |
-| Supplement    | Brand/Product type   |
-| Protein_grams | Protein per serving  |
+Selenium was used because the website contains dynamic content that loads while scrolling.
 
 ---
 
-# 🧹 Data Preprocessing
 
-## ✅ Data Cleaning
+# 🧹 Data Cleaning & Preprocessing
+
+The dataset contained inconsistent formatting and required preprocessing before analysis.
+
+The following steps were performed:
 
 * Removed duplicate records
 * Checked missing values
-* Standardized text formatting
-* Converted price columns into numeric format
+* Converted prices into numeric format
+* Cleaned text formatting
 * Verified protein values
-
-## 🔄 Data Transformation
-
-* Created category-wise summaries
-* Calculated average prices
-* Compared protein content across supplements
-* Grouped products by supplement category
 
 ---
 
 # 📊 Exploratory Data Analysis (EDA)
 
-## 1️⃣ Category-wise Product Distribution
+Different types of analysis were performed on the dataset.
 
-Analyzed supplement categories to identify product distribution across the dataset.
+### Analysis Performed
 
-### Insight
-
-* Whey Protein products dominated the dataset.
-* Omega 3 and Plant Protein categories had fewer products.
-
----
-
-## 2️⃣ Price Analysis
-
-Calculated maximum, minimum, and average prices for each category.
-
-### Insight
-
-* Whey Protein products had the highest pricing range.
-* Omega 3 products were comparatively affordable.
-* Premium supplements increased overall category averages.
+* Category-wise product distribution
+* Price comparison between supplements
+* Protein content analysis
+* Affordable vs premium product analysis
+* Supplement category comparison
 
 ---
 
-## 3️⃣ Protein Content Analysis
+# 💡 Key Insights
 
-Analyzed protein content per serving across supplement categories.
-
-### Insight
-
+* Whey Protein had the highest number of products.
 * Most whey proteins contained around 24–26g protein per serving.
-* Vegan and wellness products had lower protein values.
-* High-protein products were mainly concentrated in the whey category.
+* Premium supplements had significantly higher prices.
+* Omega 3 products were comparatively affordable.
+* Different supplement categories targeted different customer needs.
 
 ---
 
-## 4️⃣ Affordable vs Premium Products
+# 🐍 Example Pandas Operations
 
-Compared products across different pricing segments.
-
-### Insight
-
-* Nutrabay offers products for both budget and premium customers.
-* Premium isolates and advanced whey blends were the most expensive.
-* Budget-friendly products were mostly available in Omega 3 and basic supplements.
-
----
-
-## 5️⃣ Supplement Category Comparison
-
-Compared supplement categories using pricing and protein metrics.
-
-### Insight
-
-* Whey Protein provided high protein concentration with premium pricing.
-* Plant-based proteins showed moderate pricing.
-* Fish oil products focused more on wellness benefits than protein content.
-
----
-
-# 💡 Business Insights
-
-## Key Insights Extracted
-
-### 1. Whey Protein is the Dominant Segment
-
-Most products belonged to the whey protein category, showing strong customer demand in the fitness market.
-
-### 2. Premium Products Increase Average Price
-
-A small number of high-priced supplements significantly increased overall category averages.
-
-### 3. Protein-rich Products Have Higher Prices
-
-Products with higher protein concentration generally had premium pricing.
-
-### 4. Budget Products Exist for Beginners
-
-Affordable supplements provide entry-level options for new fitness consumers.
-
-### 5. Product Diversity Supports Multiple Customer Segments
-
-The dataset included products for muscle gain, wellness, vegan nutrition, and general fitness goals.
-
----
-
-# 🐍 Example Pandas Operations Used
-
-```python
+```python id="v2ihzd"
 # Average price by category
 df.groupby('Category')['Price'].mean()
 
@@ -175,7 +87,7 @@ df['Price'].max()
 # Category-wise product count
 df['Category'].value_counts()
 
-# Sorting products by price
+# Sort products by price
 df.sort_values(by='Price', ascending=False)
 ```
 
@@ -184,19 +96,18 @@ df.sort_values(by='Price', ascending=False)
 # ⚠ Challenges Faced
 
 * Extracting data from dynamic website pages
-* Handling inconsistent product naming
+* Handling inconsistent product names
 * Cleaning mixed-format data
-* Managing product categorization
+* Managing category-wise grouping
+
 ---
 
 # 🎯 Project Outcome
 
-This project successfully demonstrated:
+This project helped in learning:
 
 * Web scraping using Selenium
 * Data cleaning using Pandas
 * Exploratory Data Analysis (EDA)
-* Business insight generation
-* Real-world supplement market analysis
-
-The project helped in understanding customer-oriented product segmentation, pricing trends, and protein distribution in the sports nutrition industry.
+* Product pricing analysis
+* Real-world data handling and business insights generation
